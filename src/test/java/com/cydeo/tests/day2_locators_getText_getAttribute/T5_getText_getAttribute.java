@@ -26,7 +26,16 @@ public class T5_getText_getAttribute {
             System.out.println("Header verification FAILED!");
         }
 
+        WebElement firstNameInput = driver.findElement(By.name("firstname"));
+        String expectedPlaceHolder = "first name";
+        String actualPlaceHolder = firstNameInput.getAttribute("placeholder");
 
+        if(actualPlaceHolder.equals(expectedPlaceHolder)){
+            System.out.println("Place holder verification PASSED!");
+        }else{
+            System.out.println("Place holder verification FAILED!");
+        }
+        driver.close();
 
     }
 }
