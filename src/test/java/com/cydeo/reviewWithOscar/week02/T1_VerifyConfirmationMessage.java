@@ -32,6 +32,18 @@ public class T1_VerifyConfirmationMessage {
             System.out.println("Email verification FAILED!");
         }
 
+        //driver.findElement(By.id("form_submit")).click();
+        //driver.findElement(By.cssSelector("#form_submit")).click();
+        //driver.findElement(By.tagName("//button")).click();
+
+        driver.findElement(By.xpath("//i[contains(text(),'Retrieve')]")).click();
+
+        HandleWait.staticWait(1);
+
+        String expectedMessage = "Your e-mail's been sent!";
+        String actualMessage = driver.findElement(By.name("confirmation_message")).getText();
+
+        driver.close();
 
 
     }
