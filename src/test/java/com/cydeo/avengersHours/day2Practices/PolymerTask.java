@@ -26,7 +26,7 @@ The Web Application under test http://todomvc.com/
 
         // The first step should be to load the website
         // From Selenium Library (Version 3 - pom.xml: dependency) we use WebDriver Interface, and with a polymorphic way we create driver instance
-        // driver instance initiates a 'session', until we say driver.close or driver.quit
+        //  initiates a 'session', until we say driver.close or driver.quit
         driver = WebDriverFactory.getDriver("chrome"); // opens an empty Chrome browser
 
         // our driver object brings us many useful methods from the library
