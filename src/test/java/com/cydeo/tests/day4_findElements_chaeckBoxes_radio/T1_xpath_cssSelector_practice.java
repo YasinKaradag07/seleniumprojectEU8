@@ -17,13 +17,21 @@ public class T1_xpath_cssSelector_practice {
 
         WebElement homeLink_ex1 = driver.findElement(By.cssSelector("a[class='nav-link']"));
         WebElement homeLink_ex2 = driver.findElement(By.cssSelector("a.nav-link"));
-        WebElement homeLink_ex3 = driver.findElement(By.cssSelector("a.[href='/']"));
+        WebElement homeLink_ex3 = driver.findElement(By.cssSelector("a[href='/']"));
         WebElement header_ex1 = driver.findElement(By.cssSelector("div.example>h2"));
-        WebElement header_ex2 = driver.findElement(By.cssSelector("//h2[text()='Forgot Password']"));
+        WebElement header_ex2 = driver.findElement(By.xpath("//h2[text()='Forgot Password']"));
         WebElement emailLabel = driver.findElement(By.xpath("//label[@for='email']"));
         WebElement inputBox_ex1 = driver.findElement(By.xpath("//input[@name='email']"));
         WebElement inputBox_ex2 = driver.findElement(By.xpath("//input[contains(@pattern,'a-z')]"));
+        WebElement retrievePasswordButton = driver.findElement(By.xpath("//button[@id='form_submit']"));
+        WebElement poweredByCydeoText = driver.findElement(By.xpath("//div[@style='text-align: center;']"));
 
+        System.out.println("homeLink_ex1.isDisplayed() = " + homeLink_ex1.isDisplayed());
+        System.out.println("header_ex1.isDisplayed() = " + header_ex1.isDisplayed());
+        System.out.println("emailLabel.isDisplayed() = " + emailLabel.isDisplayed());
+        System.out.println("retrievePasswordButton.isDisplayed() = " + retrievePasswordButton.isDisplayed());
+        System.out.println("inputBox_ex1.isDisplayed() = " + inputBox_ex1.isDisplayed());
+        System.out.println("poweredByCydeoText.isDisplayed() = " + poweredByCydeoText.isDisplayed());
 
     }
 }
