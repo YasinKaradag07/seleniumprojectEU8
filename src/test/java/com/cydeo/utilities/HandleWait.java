@@ -1,4 +1,4 @@
-package com.cydeo.reviewWithOscar.week02;
+package com.cydeo.utilities;
 
 public class HandleWait {
 

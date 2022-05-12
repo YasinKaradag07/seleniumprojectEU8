@@ -1,6 +1,6 @@
 package com.cydeo.avengersHours.day2Practices;
 
-import com.cydeo.reviewWithOscar.week02.HandleWait;
+import com.cydeo.utilities.HandleWait;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
