@@ -35,3 +35,15 @@ TC #6: StaleElementReferenceException Task 1- Open a chrome browser
 5- Verify it is displayed, again.
 This is a simple StaleElementReferenceException to understand what is this exception and how to handle it.
  */
+
+
+
+
+
+
+
+
+
+
+
+
