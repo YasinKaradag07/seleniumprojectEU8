@@ -33,7 +33,6 @@ public class T5_checkBoxes {
         driver.close();
         driver.quit();
 
-
     }
 }
 /*
