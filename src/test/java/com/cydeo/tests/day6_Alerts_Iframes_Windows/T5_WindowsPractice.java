@@ -44,7 +44,9 @@ public class T5_WindowsPractice {
             System.out.println("Current title while switching windows: " + driver.getTitle());
         }
 
+        String expectedTitleAfterClick = "New Window";
         actualTitle = driver.getTitle();
+        Assert.assertEquals(actualTitle,expectedTitleAfterClick);
         System.out.println("Title after click = " + actualTitle);
 
         driver.close();
