@@ -2,27 +2,34 @@ package com.cydeo.avengersHours.day3;
 
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.concurrent.TimeUnit;
-
 public class TestCase07 {
 
-    WebDriver driver;
-
+    WebDriver driver; // Declare your variable global
     @BeforeMethod
-    public void setup(){
-        driver = WebDriverFactory.getDriver("chrome");
+    public void setUp(){
+        driver = WebDriverFactory.getDriver("chrome"); // initialize your variable
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
+    @AfterMethod
+    public void tearDown(){
+        driver.close();
     }
 
     @Test
-    public void Test07(){
-        driver.get("http://automationexercise.com/");
-    }
+    public void Test1() {
+        driver.get("http://automationexercise.com");
 
+        // Verify that home page is visible successfully : What they mean? --> Verify that you have Hope Page URL and Title, another option verify that test cases button is displayed
+        String expectedTitle = "Automation Exercise";
+        String actualTitle = driver.getTitle();
+        // verify Title
+        Assert.assertEquals(actualTitle, expectedTitle, "Home Page is NOT displayed");
+    }
 }
 
 /*
