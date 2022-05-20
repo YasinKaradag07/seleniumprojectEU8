@@ -1,6 +1,5 @@
 package com.cydeo.reviewWithOscar.week02;
 
-import com.cydeo.utilities.HandleWait;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -39,7 +38,7 @@ public class T1_VerifyConfirmationMessage {
 
         driver.findElement(By.xpath("//i[contains(text(),'Retrieve')]")).click();
 
-        HandleWait.staticWait(1);
+        HandleWait.sleep(1);
 
         String expectedMessage = "Your e-mail's been sent!";
         String actualMessage = driver.findElement(By.name("confirmation_message")).getText();

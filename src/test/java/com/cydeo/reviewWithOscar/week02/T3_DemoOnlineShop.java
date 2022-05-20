@@ -1,9 +1,10 @@
 package com.cydeo.reviewWithOscar.week02;
 
-import com.cydeo.utilities.HandleWait;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
+import static com.cydeo.utilities.BrowserUtils.sleep;
 
 public class T3_DemoOnlineShop {
 
@@ -13,11 +14,11 @@ public class T3_DemoOnlineShop {
         driver.manage().window().maximize();
         driver.get("https://www.demoblaze.com/index.html");
         driver.findElement(By.partialLinkText("Laptops")).click();
-        HandleWait.staticWait(3);
+        sleep(3);
         driver.findElement(By.partialLinkText("Sony vaio i5")).click();
         
         int expectedPrice = 790;
-        HandleWait.staticWait(3);
+        sleep(3);
         String priceText = driver.findElement(By.tagName("h3")).getText();
         int actualPrice = Integer.parseInt(priceText.split(" ")[0].substring(1));
         System.out.println("actualPrice = " + actualPrice);
