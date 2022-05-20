@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import static com.cydeo.utilities.BrowserUtils.sleep;
+
 public class T2_BasicLoginAuthentication {
 
     public static void main(String[] args) {
@@ -35,7 +37,7 @@ public class T2_BasicLoginAuthentication {
             System.exit(-1);
         }
 
-        HandleWait.sleep(2);
+        sleep(2);
         driver.close();
 
     }

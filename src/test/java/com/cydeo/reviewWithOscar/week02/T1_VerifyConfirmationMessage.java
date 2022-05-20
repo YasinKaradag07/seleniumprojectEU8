@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import static com.cydeo.utilities.BrowserUtils.sleep;
+
 public class T1_VerifyConfirmationMessage {
 
     public static void main(String[] args) {
@@ -38,7 +40,7 @@ public class T1_VerifyConfirmationMessage {
 
         driver.findElement(By.xpath("//i[contains(text(),'Retrieve')]")).click();
 
-        HandleWait.sleep(1);
+        sleep(1);
 
         String expectedMessage = "Your e-mail's been sent!";
         String actualMessage = driver.findElement(By.name("confirmation_message")).getText();

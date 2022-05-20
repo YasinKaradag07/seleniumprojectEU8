@@ -6,6 +6,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import static com.cydeo.utilities.BrowserUtils.sleep;
+
 public class PolymerTask {
 
     /*
@@ -56,7 +58,7 @@ The Web Application under test http://todomvc.com/
 
         String toDoItem = "This Todo Item is added by user";
 
-        HandleWait.sleep(1);
+        sleep(1);
         WebElement toDoBox = driver.findElement(By.id("new-todo"));
         toDoBox.sendKeys(toDoItem+ Keys.ENTER);
 
@@ -64,7 +66,7 @@ The Web Application under test http://todomvc.com/
 
         //  String locator = "//label[.='customText']";  // I want to use text I am sending as String variable
         String locator = "//label[.='"+toDoItem+"']";
-        HandleWait.sleep(1);
+        sleep(1);
         WebElement customToDOItem = driver.findElement(By.xpath(locator));
 
         if(customToDOItem.isDisplayed()){
