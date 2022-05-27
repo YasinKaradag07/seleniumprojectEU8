@@ -32,6 +32,7 @@ public class T1_WebTable_Order_Verify {
 
         Assert.assertEquals(actualBobName,expectedBobName);
 
+        // alternative locator to bobMartinDateCell = "//td[.='Bob Martin']/../td[5]"
         WebElement bobMertinDateCell = driver.findElement(By.xpath
                 ("//table[@id='ctl00_MainContent_orderGrid']/tbody/tr[7]/td[.='Bob Martin']/following-sibling::td[3]"));
 
