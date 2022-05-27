@@ -1,6 +1,7 @@
 package com.cydeo.tests.day8_Properties_Confiq_Reader;
 
 import com.cydeo.utilities.WebDriverFactory;
+import com.cydeo.utilities.WebTableUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -40,10 +41,14 @@ public class T1_WebTable_Order_Verify {
         String actualBobDate = bobMertinDateCell.getText();
 
         Assert.assertEquals(actualBobDate,expectedBobDate);
-
         driver.close();
-
     }
+
+    @Test
+    public void test3(){
+        WebTableUtils.orderVerify(driver,"Bart Fisher","1/16/2021");
+    }
+
 
 
 }
