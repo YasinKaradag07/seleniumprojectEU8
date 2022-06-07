@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.Test;
 
 public class WebTableUtils {
 
@@ -17,12 +16,19 @@ public class WebTableUtils {
 //        return driver.findElement(By.xpath("//td[.='"+customerName+"']/following-sibling::td[3]")).getText();
 //    }
 
-    @Test
+
     public static void orderVerify(WebDriver driver,String customerName,String expectedOrderDate){
         String locator = "//td[.='"+customerName+"']/following-sibling::td[3]";
         WebElement customerDateCell = driver.findElement(By.xpath(locator));
         String actualOrderDate = customerDateCell.getText();
         Assert.assertEquals(actualOrderDate,expectedOrderDate);
+    }
+
+    public static void getTableGetEmail(WebDriver driver, String tableNum, String firstName){
+
+        WebElement emailElement = driver.findElement(By.xpath("//table[@id='table" + tableNum + "']//tbody//tr//td[.='" + firstName + "']//following-sibling::td[1]"));
+        System.out.println(emailElement.getText());
+        System.out.println("Table: "+tableNum);
     }
 
 
