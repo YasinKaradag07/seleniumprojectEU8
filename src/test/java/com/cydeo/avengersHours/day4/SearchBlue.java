@@ -4,7 +4,10 @@ import com.cydeo.utilities.Driver;
 import com.cydeo.utilities.ReviewUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.util.List;
 
 public class SearchBlue extends TestBaseForAvengers{
 
@@ -16,6 +19,14 @@ public class SearchBlue extends TestBaseForAvengers{
         WebElement searchButton = Driver.getDriver().findElement(By.id("submit_search"));
         searchBox.sendKeys("blue"); // search and enter
         searchButton.click();
+
+        // get the names of products
+        List<WebElement> elementsList = Driver.getDriver()
+                .findElements(By.xpath("//img[contains(@src,'product_picture')]/../p\n"));
+        for(WebElement webElement : elementsList){
+            System.out.println("webElement.getText() = " + webElement.getText());
+            Assert.assertTrue(webElement.getText().toLowerCase().contains("blue"));
+        }
     }
 }
 /*
